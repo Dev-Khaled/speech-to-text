@@ -37,7 +37,8 @@ class AutomaticViewController: UIViewController {
             }
         }
     }
-    private var startWord = "Love"
+    
+    private var startKeyword = "Love"
 
 
     // MARK: - View Life Cycle
@@ -141,12 +142,12 @@ class AutomaticViewController: UIViewController {
                 if self.startSending {
                     self.resultLabel.text = transcription
                     
-                } else if transcription.localizedCaseInsensitiveContains(self.startWord) {
+                } else if transcription.localizedCaseInsensitiveContains(self.startKeyword) {
                     shouldStartSending = true
                     self.stopRecording()
                 
                 } else {
-                    self.resultLabel.text = "Looking for key: \(self.startWord)"
+                    self.resultLabel.text = "Looking for key: \(self.startKeyword)"
                 }
                 
                 isFinal = result.isFinal
